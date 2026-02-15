@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diploma Delights</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #fff8cc, #ffe066);
+    text-align: center;
+    color: #333;
+}
+
+header {
+    background: #ffcc00;
+    padding: 20px;
+    border-bottom: 5px solid red;
+}
+
+h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #b30000;
+}
+
+h3 {
+    margin: 5px 0 0;
+    font-weight: normal;
+}
+
+.section {
+    padding: 50px 20px;
+}
+
+.card {
+    background: white;
+    display: inline-block;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 420px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.dish-name {
+    font-size: 30px;
+    margin: 15px 0;
+    color: #cc0000;
+}
+
+.price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #009933;
+}
+
+.offer-section {
+    background: white;
+    padding: 40px 20px;
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;
+}
+
+.offer-highlight {
+    font-size: 28px;
+    font-weight: bold;
+    color: #009933;
+    animation: pulse 1.5s infinite;
+}
+
+.payment-section {
+    padding: 40px 20px;
+}
+
+.feedback-section {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.qr-box img {
+    width: 200px;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    background-color: #cc0000;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #990000;
+}
+
+footer {
+    background: #ffcc00;
+    padding: 15px;
+    border-top: 5px solid red;
+    font-weight: bold;
+}
+
+/* Thank You Popup */
+
+.thankyou {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.thankyou-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    animation: pop 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes pop {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Diploma Delights</h1>
+    <h3>Presented by Students of Seth Jai Parkash Polytechnic</h3>
+</header>
+
+<div class="section">
+    <div class="card">
+        <!-- Replace papad.jpg with your image -->
+        <img src="papad.jpg" alt="Papad Cone Chaat">
+        <div class="dish-name">Papad Cone Chaat</div>
+        <div class="price">Only ₹20</div>
+    </div>
+</div>
+
+<div class="offer-section">
+    <h2>🔥 Special Offer 🔥</h2>
+    <div style="font-size:50px;">🌮 🌮 🌮</div>
+    <div class="offer-highlight">Buy 3 Cones for Just ₹50!</div>
+</div>
+
+<div class="payment-section">
+    <h2>💳 Payment Instructions</h2>
+    <p>1. Scan the Google Pay QR Code</p>
+    <p>2. Complete the payment</p>
+    <p>3. Show payment screenshot at counter</p>
+    <button onclick="showThankYou()">I Have Paid</button>
+</div>
+
+<div class="feedback-section">
+    <h2>❤️ Give Your Feedback</h2>
+    <p>Scan below QR and tell us how you liked our Papad Cone Chaat!</p>
+    <div class="qr-box">
+        <!-- Replace feedback.png with your Google Form QR -->
+        <img src="C:\Users\Admin\OneDrive\Documents\Radhika\feedback.png (1).png" alt="Feedback QR Code">
+    </div>
+</div>
+
+<footer>
+    Ed Mela 2026 | Crunchy • Spicy • Delicious
+</footer>
+
+<!-- Thank You Popup -->
+
+<div class="thankyou" id="thankyou">
+    <div class="thankyou-box">
+        <h2>🎉 Thank You for Your Payment! 🎉</h2>
+        <p>We hope you enjoy our Papad Cone Chaat 😋</p>
+        <p>Please don’t forget to give feedback ❤️</p>
+        <button onclick="closeThankYou()">Close</button>
+    </div>
+</div>
+
+<script>
+function showThankYou() {
+    document.getElementById("thankyou").style.display = "flex";
+}
+
+function closeThankYou() {
+    document.getElementById("thankyou").style.display = "none";
+}
+</script>
+
+</body>
+</html>
